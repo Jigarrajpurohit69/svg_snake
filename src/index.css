@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #0aa86eb3;
+    color: #0f0f0f;
+    overflow-x: hidden;
+  }
+
+  h1, h2 {
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+}
+
+/* --- MOVING ANIMATED GRADIENT --- */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    #ff5f0a,
+    #ffb347,
+    #ff5f0a,
+    #f7a072,
+    #ff5f0a
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Lenis Smooth Scroll Required CSS */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
